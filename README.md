@@ -47,6 +47,9 @@ $ cd mysetup-node
 
 # Install dependencies
 $ yarn
+
+# Run project
+$ yarn dev:server
 ```
 
 ---
