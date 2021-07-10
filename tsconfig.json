@@ -4,7 +4,7 @@
     "module": "commonjs",
     "outDir": "./dist",
     "strictPropertyInitialization": false,
-    "baseUrl": "./src",
+    // "baseUrl": "./src",
     "paths": {},
     "esModuleInterop": true,
     "experimentalDecorators": true,
