@@ -1022,6 +1022,28 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
+"@prisma/client@^2.27.0":
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-2.27.0.tgz#17d98e64deea29063bee1778d85b5f7edeb14a26"
+  integrity sha512-Sh2b1M8MGbOHbwG1FEqdWTUCrEX3p7gt2e7gpaBWou8yTIJvP1UZ4YlHgpuUcR1q4pEIR/JTZJeQk2l4iDyRBQ==
+  dependencies:
+    "@prisma/engines-version" "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+
+"@prisma/engines-version@2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb":
+  version "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb.tgz#60a34634fe26be9caca42556605a132e70810e3c"
+  integrity sha512-pwOsYdzw8+cwKlUrCzasiRh96RhNuJ/QcKr0HwjxxlUWTmbEayDKjqRRz5fsUYIpSv5fW1B3SsbzHOqVtFZ6XQ==
+
+"@prisma/engines@2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb":
+  version "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb.tgz#22084a81e90b66665aa3aacde79ef5b1bc3587fe"
+  integrity sha512-AIbIhAxmd2CHZO5XzQTPrfk+Tp/5eoNoSledOG3yc6Dk97siLvnBuSEv7prggUbedCufDwZLAvwxV4PEw3zOlQ==
+
+"@types/bcryptjs@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
+  integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
+
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
@@ -1406,6 +1428,11 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
+bcryptjs@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+  integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
+
 binary-extensions@^1.0.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.1.tgz#598afe54755b2868a5330d2aff9d4ebb53209b65"
@@ -1576,6 +1603,11 @@ chokidar@^3.5.1:
     readdirp "~3.5.0"
   optionalDependencies:
     fsevents "~2.3.1"
+
+class-transformer@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.4.0.tgz#b52144117b423c516afb44cc1c76dbad31c2165b"
+  integrity sha512-ETWD/H2TbWbKEi7m9N4Km5+cw1hNcqJSxlSYhsLsNjQzWWiZIYA1zafxpK9PwVfaZ6AqR5rrjPVUBGESm5tQUA==
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -1846,6 +1878,11 @@ doctrine@^3.0.0:
   integrity sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
   dependencies:
     esutils "^2.0.2"
+
+dotenv@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-10.0.0.tgz#3d4227b8fb95f81096cdd2b66653fb2c7085ba81"
+  integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
 dynamic-dedupe@^0.3.0:
   version "0.3.0"
@@ -3547,6 +3584,13 @@ prettier@^2.3.0:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
 
+prisma@^2.27.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.27.0.tgz#45fdecb9c2470c7ad602e804ffed70dfa7c46ad1"
+  integrity sha512-/3H9C+IPlJmY5KArhfKHMpxKXqcZIBZ+LjM1b5FxvLCGQkq/mRC96SpHcKcLtiYgftNAX13nvlxg+cBw9Dbe8Q==
+  dependencies:
+    "@prisma/engines" "2.27.0-43.cdba6ec525e0213cce26f8e4bb23cf556d1479bb"
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
@@ -3672,6 +3716,11 @@ redent@^1.0.0:
   dependencies:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
+
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
@@ -4256,7 +4305,7 @@ tsconfig@^7.0.0:
     strip-bom "^3.0.0"
     strip-json-comments "^2.0.0"
 
-tslib@^1.8.1:
+tslib@^1.8.1, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
@@ -4267,6 +4316,13 @@ tsutils@^3.17.1:
   integrity sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==
   dependencies:
     tslib "^1.8.1"
+
+tsyringe@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/tsyringe/-/tsyringe-4.6.0.tgz#14915d3d7f0db35e1cf7269bdbf7c440713c8d07"
+  integrity sha512-BMQAZamSfEmIQzH8WJeRu1yZGQbPSDuI9g+yEiKZFIcO46GPZuMOC2d0b52cVBdw1d++06JnDSIIZvEnogMdAw==
+  dependencies:
+    tslib "^1.9.3"
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
