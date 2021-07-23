@@ -1,49 +1,54 @@
-## MySetup NodeJS
+## Aluraflix back-end
 ![Badge](https://img.shields.io/static/v1?label=DH&message=DOSOMETHINGGREAT&color=0070f3&style=<0070f3>&logo=rocket)
 
-### Description
+### Projeto
 
-This is my basic configuration of nodejs projects with express, using code patterns like ESLint, Prettier and EditorConfig.
+Aluraflix é uma aplicação desenvolvida na Edição #2 da Alura Challenges, que consiste em permitir que usuários possam montar playlists com links apra seus vídeos preferidos, separados por categoria.
 
-### Techs
+Edição #2 da Alura Challenges: Desenvolver uma API Rest do zero, escolhendo as linguagens e tecnologias, um desafio de 4 semanas para implementar um sitema desde a base de dados até os testes e o deploy, com suporte de especialistas via Discord.
+
+### Tecnologias
 
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/pt-br/)
+- [Prisma](https://www.prisma.io/)
+- [JSON Web Tokens](https://jwt.io/)
+- [TSyringe](https://www.npmjs.com/package/tsyringe)
 
-### Code Standards
+### Padrões de Código
 
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
 
-### Getting Started
+### Requisitos básicos
 
-Before you begin, you will need to have the following tools installed on your machine:
+Antes de começar, você precisará ter as seguintes ferramentas instaladas em sua máquina:
 - [Git](https://git-scm.com)
 
-The project can be built with npm or yarn, so choose one of the approach bellow in case you don't have any installed on your system.
+O projeto pode ser construído com npm ou yarn, então escolha uma das abordagens abaixo caso você não tenha nenhum instalado em seu sistema.
 
-Npm is distributed with Node.js which means that when you download Node.js, you automatically get npm installed on your computer
-- [Node.js v14.16.0](https://nodejs.org/) or heigher.
+O Npm é distribuído com o Node.js, o que significa que quando você faz o download do Node.js, o npm é instalado automaticamente no seu computador
+- [Node.js v14.16.0](https://nodejs.org/) ou maior.
 
-Yarn is a package manager built by Facebook Team and seems to be faster than npm in general.
-- [Yarn v1.22.5](https://yarnpkg.com/) or heigher.
+Yarn é um gerenciador de pacotes criado pela equipe do Facebook e parece ser mais rápido do que o npm em geral.
+- [Yarn v1.22.5](https://yarnpkg.com/) ou maior.
 
-Also, it’s good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/).
+Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](https://code.visualstudio.com/).
 
-### :information_source: How to run
+### :information_source: Como executar
 
-Follow the instructions below to download and use the project from this repository:
+Siga as instruções abaixo para baixar e usar o projeto deste repositório:
 
 ```bash
 # Clone this repository using SSH
-$ git clone git@github.com:daniel21h/mysetup-nodejs.git
+$ git clone git@github.com:daniel21h/aluraflix-server.git
 # or clone using https
-$ git clone https://github.com/daniel21h/mysetup-nodejs.git
+$ git clone https://github.com/daniel21h/aluraflix-server.git
 
 # Go into the repository
-$ cd mysetup-node
+$ cd aluraflix-server
 
 # Install dependencies
 $ yarn
