@@ -17,6 +17,9 @@
       "@infra/*": [
         "infra/*"
       ],
+      "@shared/*": [
+        "shared/*"
+      ],
     },
     "esModuleInterop": true,
     "experimentalDecorators": true,
