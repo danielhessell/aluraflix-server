@@ -1,5 +1,6 @@
 import { prisma } from '@infra/prisma/client';
 import { ICreateVideoDTO } from '@modules/videos/dtos/ICreateVideoDTO';
+import { IUpdateVideoDTO } from '@modules/videos/dtos/IUpdateVideoDTO';
 import { IVideoDTO } from '@modules/videos/dtos/IVideoDTO';
 
 import { IVideosRepository } from '../IVideosRepository';
@@ -39,5 +40,23 @@ export class VideosRepository implements IVideosRepository {
     });
 
     return videos;
+  }
+
+  async update({
+    id,
+    title,
+    description,
+    url,
+  }: IUpdateVideoDTO): Promise<IVideoDTO> {
+    const video = await this.repository.update({
+      where: { id },
+      data: {
+        title,
+        description,
+        url,
+      },
+    });
+
+    return video;
   }
 }

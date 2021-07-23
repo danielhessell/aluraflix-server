@@ -16,7 +16,7 @@ model User {
   email      String   @unique
   password   String
   created_at DateTime @default(now())
-  updated_at DateTime @default(now()) @updatedAt
+  updated_at DateTime @updatedAt
 
   refresh_tokens RefreshToken[]
   videos         Video[]
@@ -43,6 +43,7 @@ model Video {
   description String
   url         String
   created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
 
   @@map("videos")
 }
