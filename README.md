@@ -15,6 +15,7 @@ Edição #2 da Alura Challenges: Desenvolver uma API Rest do zero, escolhendo as
 - [Prisma](https://www.prisma.io/)
 - [JSON Web Tokens](https://jwt.io/)
 - [TSyringe](https://www.npmjs.com/package/tsyringe)
+- [Celebrate](https://www.npmjs.com/package/celebrate)
 
 ### Padrões de Código
 
