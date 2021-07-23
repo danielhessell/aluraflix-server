@@ -6,6 +6,7 @@ import { UpdateVideoController } from '@modules/videos/useCases/UpdateVideo/Upda
 import { Router } from 'express';
 
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
+import { videosValidator } from '../validators/videos.validator';
 
 const videosRoutes = Router();
 
