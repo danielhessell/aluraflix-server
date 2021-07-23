@@ -1,6 +1,7 @@
-import { prisma } from '../../../../prisma/client';
-import { ICreateRefreshTokenDTO } from '../../dtos/ICreateRefreshTokenDTO';
-import { IRefreshTokensDTO } from '../../dtos/IRefreshTokensDTO';
+import { prisma } from '@infra/prisma/client';
+import { ICreateRefreshTokenDTO } from '@modules/accounts/dtos/ICreateRefreshTokenDTO';
+import { IRefreshTokensDTO } from '@modules/accounts/dtos/IRefreshTokensDTO';
+
 import { IRefreshTokensRepository } from '../IRefreshTokensRepository';
 
 export class RefreshTokensRepository implements IRefreshTokensRepository {

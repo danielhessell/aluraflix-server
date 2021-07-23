@@ -1,11 +1,10 @@
+import { AppError } from '@infra/http/errors/AppError';
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
+import { IUserResponseDTO } from '@modules/accounts/dtos/IUserResponseDTO';
+import { UserMapper } from '@modules/accounts/mappers/UserMapper';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
-
-import { AppError } from '../../../../errors/AppError';
-import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
-import { IUserResponseDTO } from '../../dtos/IUserResponseDTO';
-import { UserMapper } from '../../mappers/UserMapper';
-import { IUsersRepository } from '../../repositories/IUsersRepository';
 
 @injectable()
 export class CreateUserUseCase {

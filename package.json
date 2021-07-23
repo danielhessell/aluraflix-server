@@ -7,7 +7,7 @@
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "node dist/server.js",
     "dev": "node dist/server.js",
-    "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn --exit-child src/server.ts"
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --respawn --exit-child src/infra/http/server.ts"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
@@ -34,6 +34,7 @@
     "prettier": "^2.3.0",
     "prisma": "^2.27.0",
     "ts-node-dev": "^1.1.6",
+    "tsconfig-paths": "^3.10.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {

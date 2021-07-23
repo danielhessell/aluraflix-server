@@ -5,8 +5,19 @@
     "outDir": "./dist",
     "strict": false,
     "strictPropertyInitialization": false,
-    // "baseUrl": "./src",
-    "paths": {},
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "paths": {
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@infra/*": [
+        "infra/*"
+      ],
+    },
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
