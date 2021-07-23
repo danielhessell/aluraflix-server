@@ -1,8 +1,9 @@
 import { ICreateVideoDTO } from '@modules/videos/dtos/ICreateVideoDTO';
 import { IVideoDTO } from '@modules/videos/dtos/IVideoDTO';
 import { IVideosRepository } from '@modules/videos/repositories/IVideosRepository';
-import { inject } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 
+@injectable()
 export class CreateVideoUseCase {
   constructor(
     @inject('VideosRepository')
