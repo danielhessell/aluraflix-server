@@ -18,7 +18,7 @@ model User {
   created_at DateTime @default(now())
   updated_at DateTime @default(now()) @updatedAt
 
-  RefreshToken RefreshToken[]
+  refresh_tokens RefreshToken[]
 
   @@map("users")
 }

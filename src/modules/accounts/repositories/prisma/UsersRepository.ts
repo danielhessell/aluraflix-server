@@ -4,8 +4,10 @@ import { IUserDTO } from '../../dtos/IUserDTO';
 import { IUsersRepository } from '../IUsersRepository';
 
 export class UsersRepository implements IUsersRepository {
+  private repository = prisma.user;
+
   async create({ name, email, password }: ICreateUserDTO): Promise<IUserDTO> {
-    const user = await prisma.user.create({
+    const user = await this.repository.create({
       data: {
         name,
         email,
@@ -17,7 +19,7 @@ export class UsersRepository implements IUsersRepository {
   }
 
   async findByEmail(email: string): Promise<IUserDTO> {
-    const user = await prisma.user.findUnique({
+    const user = await this.repository.findUnique({
       where: { email },
     });
 
