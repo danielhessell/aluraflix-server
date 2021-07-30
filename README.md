@@ -43,18 +43,21 @@ Além disso, é bom ter um editor para trabalhar com o código, como [VSCode](ht
 Siga as instruções abaixo para baixar e usar o projeto deste repositório:
 
 ```bash
-# Clone this repository using SSH
+# Clone este repositório usando SSH
 $ git clone git@github.com:daniel21h/aluraflix-server.git
-# or clone using https
+# ou clone usando https
 $ git clone https://github.com/daniel21h/aluraflix-server.git
 
-# Go into the repository
+# Vá para o repositório
 $ cd aluraflix-server
 
-# Install dependencies
+# Instale as dependências
 $ yarn
 
-# Run project
+# Executar migrações do banco
+$ yarn prisma migrate dev
+
+# Executar projeto
 $ yarn dev:server
 ```
 
