@@ -3,8 +3,8 @@ import { UsersRepositoryInMemory } from '@modules/accounts/repositories/in-memor
 
 import { CreateUserUseCase } from './CreateUserUseCase';
 
-let createUserUseCase: CreateUserUseCase;
 let usersRepositoryInMemory: UsersRepositoryInMemory;
+let createUserUseCase: CreateUserUseCase;
 
 describe('Create User Use Case', () => {
   beforeEach(() => {

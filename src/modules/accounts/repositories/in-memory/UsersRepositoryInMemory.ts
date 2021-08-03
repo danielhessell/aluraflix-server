@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { IUsersRepository } from '../IUsersRepository';
 
 export class UsersRepositoryInMemory implements IUsersRepository {
-  private users: IUserDTO[] = [];
+  private inMemory: IUserDTO[] = [];
 
   async create({ name, email, password }: ICreateUserDTO): Promise<IUserDTO> {
     const user = Object.assign(prisma.user, {
@@ -18,13 +18,13 @@ export class UsersRepositoryInMemory implements IUsersRepository {
       updated_at: new Date(),
     });
 
-    this.users.push(user);
+    this.inMemory.push(user);
 
     return user;
   }
 
   async findByEmail(email: string): Promise<IUserDTO> {
-    const user = this.users.find(user => user.email === email);
+    const user = this.inMemory.find(user => user.email === email);
 
     return user;
   }
