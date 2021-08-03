@@ -12,7 +12,7 @@ export class RefreshTokensRepository implements IRefreshTokensRepository {
     token,
     expiresIn,
   }: ICreateRefreshTokenDTO): Promise<IRefreshTokensDTO> {
-    const refreshToken = this.repository.create({
+    const refreshToken = await this.repository.create({
       data: {
         user_id,
         token,

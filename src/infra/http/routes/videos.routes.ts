@@ -18,7 +18,7 @@ const deleteVideoController = new DeleteVideoController();
 
 videosRoutes.use(ensureAuthenticated);
 
-videosRoutes.post('/', createVideosController.handle);
+videosRoutes.post('/', videosValidator.create, createVideosController.handle);
 
 videosRoutes.get('/', listUserVideosController.handle);
 
