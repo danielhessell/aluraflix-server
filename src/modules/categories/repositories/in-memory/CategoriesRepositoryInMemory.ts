@@ -2,52 +2,50 @@ import { prisma } from '@infra/prisma/client';
 import { ICategoryDTO } from '@modules/categories/dtos/ICategoryDTO';
 import { ICreateCategoryDTO } from '@modules/categories/dtos/ICreateCategoryDTO';
 import { IUpdateCategoryDTO } from '@modules/categories/dtos/IUpdateCategoryDTO';
+import { v4 as uuid } from 'uuid';
 
 import { ICategoriesRepository } from '../ICategoriesRepository';
 
-export class CategoriesRepository implements ICategoriesRepository {
-  private repository = prisma.category;
+export class CategoriesRepositoryInMemory implements ICategoriesRepository {
+  private inMemory: ICategoryDTO[] = [];
 
   async create({ title, color }: ICreateCategoryDTO): Promise<ICategoryDTO> {
-    const category = await this.repository.create({
-      data: {
-        title,
-        color,
-      },
+    const category = Object.assign(prisma.category, {
+      id: uuid(),
+      title,
+      color,
+      created_at: new Date(),
     });
+
+    this.inMemory.push(category);
 
     return category;
   }
 
   async findById(category_id: string): Promise<ICategoryDTO> {
-    const category = await this.repository.findUnique({
-      where: { id: category_id },
-    });
+    const category = this.inMemory.find(
+      category => category.id === category_id,
+    );
 
     return category;
   }
 
   async findByIdAndReturnVideos(category_id: string): Promise<ICategoryDTO> {
-    const category = await this.repository.findUnique({
-      where: { id: category_id },
-      include: { videos: true },
-    });
+    const category = this.inMemory.find(
+      category => category.id === category_id,
+    );
 
     return category;
   }
 
   async findByTitle(title: string): Promise<ICategoryDTO> {
-    const category = await this.repository.findFirst({
-      where: { title },
-    });
+    const category = this.inMemory.find(category => category.title === title);
 
     return category;
   }
 
   async listAll(): Promise<ICategoryDTO[]> {
-    const categories = await this.repository.findMany();
-
-    return categories;
+    return this.inMemory;
   }
 
   async update({
@@ -55,20 +53,19 @@ export class CategoriesRepository implements ICategoriesRepository {
     title,
     color,
   }: IUpdateCategoryDTO): Promise<ICategoryDTO> {
-    const category = await this.repository.update({
-      where: { id },
-      data: {
-        title,
-        color,
-      },
-    });
+    const category = this.inMemory.find(category => category.id === id);
+
+    category.title = title;
+    category.color = color;
 
     return category;
   }
 
   async delete(category_id: string): Promise<void> {
-    await this.repository.delete({
-      where: { id: category_id },
-    });
+    const category = this.inMemory
+      .map(category => category.id === category_id)
+      .indexOf(true);
+
+    this.inMemory.splice(category, 1);
   }
 }
