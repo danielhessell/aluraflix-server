@@ -5,6 +5,7 @@ import { IUpdateCategoryDTO } from '../dtos/IUpdateCategoryDTO';
 export interface ICategoriesRepository {
   create(data: ICreateCategoryDTO): Promise<ICategoryDTO>;
   findById(category_id: string): Promise<ICategoryDTO>;
+  findByIdAndReturnVideos(category_id: string): Promise<ICategoryDTO>;
   findByTitle(title: string): Promise<ICategoryDTO>;
   listAll(): Promise<ICategoryDTO[]>;
   update(data: IUpdateCategoryDTO): Promise<ICategoryDTO>;

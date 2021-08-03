@@ -27,6 +27,15 @@ export class CategoriesRepository implements ICategoriesRepository {
     return category;
   }
 
+  async findByIdAndReturnVideos(category_id: string): Promise<ICategoryDTO> {
+    const category = await this.repository.findUnique({
+      where: { id: category_id },
+      include: { Video: true },
+    });
+
+    return category;
+  }
+
   async findByTitle(title: string): Promise<ICategoryDTO> {
     const category = await this.repository.findFirst({
       where: { title },

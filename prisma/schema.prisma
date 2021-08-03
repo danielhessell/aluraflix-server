@@ -56,7 +56,7 @@ model Category {
   color      String
   created_at DateTime @default(now())
 
-  Video Video[]
+  videos Video[]
 
   @@map("categories")
 }
