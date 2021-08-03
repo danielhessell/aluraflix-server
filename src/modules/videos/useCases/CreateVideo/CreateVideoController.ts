@@ -6,12 +6,13 @@ import { CreateVideoUseCase } from './CreateVideoUseCase';
 export class CreateVideoController {
   async handle(request: Request, response: Response): Promise<Response> {
     const user_id = request.user.id;
-    const { title, description, url } = request.body;
+    const { category_id, title, description, url } = request.body;
 
     const createVideo = container.resolve(CreateVideoUseCase);
 
     const video = await createVideo.execute({
       user_id,
+      category_id,
       title,
       description,
       url,

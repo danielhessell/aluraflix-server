@@ -10,6 +10,7 @@ export class VideosRepository implements IVideosRepository {
 
   async create({
     user_id,
+    category_id,
     title,
     description,
     url,
@@ -17,6 +18,7 @@ export class VideosRepository implements IVideosRepository {
     const video = await this.repository.create({
       data: {
         user_id,
+        category_id,
         title,
         description,
         url,

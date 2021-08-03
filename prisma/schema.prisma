@@ -39,6 +39,8 @@ model Video {
   id          String   @id @default(uuid())
   user_id     String
   user        User     @relation(fields: [user_id], references: [id])
+  category_id String
+  category    Category @relation(fields: [category_id], references: [id])
   title       String
   description String
   url         String
@@ -53,6 +55,8 @@ model Category {
   title      String
   color      String
   created_at DateTime @default(now())
+
+  Video Video[]
 
   @@map("categories")
 }
