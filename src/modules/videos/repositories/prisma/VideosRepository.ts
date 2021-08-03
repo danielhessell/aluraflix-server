@@ -36,6 +36,15 @@ export class VideosRepository implements IVideosRepository {
     return video;
   }
 
+  async findByTitle(title: string): Promise<IVideoDTO[]> {
+    const videos = await this.repository.findMany({
+      where: { title },
+      orderBy: { created_at: 'desc' },
+    });
+
+    return videos;
+  }
+
   async findAllByUser(user_id: string): Promise<IVideoDTO[]> {
     const videos = await this.repository.findMany({
       where: { user_id },

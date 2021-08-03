@@ -22,17 +22,19 @@ export class CreateVideoUseCase {
     description,
     url,
   }: ICreateVideoDTO): Promise<IVideoDTO> {
-    const checkCategoryExists = await this.categoriesRepository.findById(
-      category_id,
-    );
+    if (category_id) {
+      const checkCategoryExists = await this.categoriesRepository.findById(
+        category_id,
+      );
 
-    if (!checkCategoryExists) {
-      throw new AppError('Category does not exists!');
+      if (!checkCategoryExists) {
+        throw new AppError('Category does not exists!');
+      }
     }
 
     const video = await this.videosRepository.create({
       user_id,
-      category_id,
+      category_id: !category_id ? '1' : category_id,
       title,
       description,
       url,
