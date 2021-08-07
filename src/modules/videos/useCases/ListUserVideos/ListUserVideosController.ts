@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import { ListUserVideosUseCase } from './ListUserVideosUserUseCase';
+import { ListUserVideosUseCase } from './ListUserVideoUseCase';
 
 export class ListUserVideosController {
   async handle(request: Request, response: Response): Promise<Response> {

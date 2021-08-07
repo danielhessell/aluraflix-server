@@ -18,7 +18,7 @@ export class SearchVideoUseCase {
     const video = await this.videosRepository.findById(video_id);
 
     if (!video) {
-      throw new AppError('Video not found!');
+      throw new AppError('Video does not exists!');
     }
 
     return video;

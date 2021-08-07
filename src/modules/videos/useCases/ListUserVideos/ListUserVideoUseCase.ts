@@ -17,10 +17,13 @@ export class ListUserVideosUseCase {
 
   async execute({ user_id, title }: IRequest): Promise<IVideoDTO[]> {
     if (title) {
-      const videosByTitle = await this.videosRepository.findByTitle(title);
+      const videosByTitle = await this.videosRepository.findByTitleAndUser(
+        user_id,
+        title,
+      );
 
       if (!videosByTitle) {
-        throw new AppError('No videos with this name were found.');
+        throw new AppError('No videos with this title were found.');
       }
 
       return videosByTitle;

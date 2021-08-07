@@ -1,4 +1,3 @@
-import { prisma } from '@infra/prisma/client';
 import { ICategoryDTO } from '@modules/categories/dtos/ICategoryDTO';
 import { ICreateCategoryDTO } from '@modules/categories/dtos/ICreateCategoryDTO';
 import { IUpdateCategoryDTO } from '@modules/categories/dtos/IUpdateCategoryDTO';
@@ -10,12 +9,7 @@ export class CategoriesRepositoryInMemory implements ICategoriesRepository {
   private inMemory: ICategoryDTO[] = [];
 
   async create({ title, color }: ICreateCategoryDTO): Promise<ICategoryDTO> {
-    const category = Object.assign(prisma.category, {
-      id: uuid(),
-      title,
-      color,
-      created_at: new Date(),
-    });
+    const category = { id: uuid(), title, color, created_at: new Date() };
 
     this.inMemory.push(category);
 
