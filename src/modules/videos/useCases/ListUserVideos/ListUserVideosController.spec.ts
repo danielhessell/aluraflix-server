@@ -2,13 +2,15 @@ import { app } from '@infra/http/app';
 import { prisma } from '@infra/prisma/client';
 import { IUserDTO } from '@modules/accounts/dtos/IUserDTO';
 import { ICategoryDTO } from '@modules/categories/dtos/ICategoryDTO';
+import { IVideoDTO } from '@modules/videos/dtos/IVideoDTO';
 import request from 'supertest';
 
-let category: ICategoryDTO;
-let token: string;
 let user: IUserDTO;
+let token: string;
+let video: IVideoDTO;
+let category: ICategoryDTO;
 
-describe('Delete category controller flow', () => {
+describe('List user videos controller flow', () => {
   beforeAll(async () => {
     const { body } = await request(app).post('/users').send({
       name: 'Edwin Hardy',
@@ -25,34 +27,47 @@ describe('Delete category controller flow', () => {
 
     token = authResponse.body.token;
 
-    const response = await request(app)
+    const categoryResponse = await request(app)
       .post('/categories')
       .send({
-        title: 'Delet Category Controller example',
-        color: 'color',
+        title: 'Category title',
+        color: 'green',
       })
       .set({
         Authorization: `Bearer ${token}`,
       });
 
-    category = response.body;
+    category = categoryResponse.body;
+
+    const videoResponse = await request(app)
+      .post('/videos')
+      .send({
+        category_id: category.id,
+        title: 'Example title',
+        description: 'Example description',
+        url: 'http://localhost:example/video-example',
+      })
+      .set({
+        Authorization: `Bearer ${token}`,
+      });
+
+    video = videoResponse.body;
   });
 
   afterAll(async () => {
+    await prisma.video.delete({ where: { id: video.id } });
+    await prisma.category.delete({ where: { id: category.id } });
     await prisma.user.delete({ where: { id: user.id } });
   });
 
-  it('should be able to delete a category', async () => {
+  it('should be able to list user videos', async () => {
     const response = await request(app)
-      .delete(`/categories/${category.id}`)
+      .get('/videos')
       .set({
         Authorization: `Bearer ${token}`,
       });
 
     expect(response.status).toBe(200);
-    expect(response.body).toHaveProperty(
-      'message',
-      'Successfully deleted category!',
-    );
+    expect(response.body).toHaveLength(1);
   });
 });

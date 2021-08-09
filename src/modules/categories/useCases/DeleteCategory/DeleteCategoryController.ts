@@ -11,6 +11,6 @@ export class DeleteCategoryController {
 
     await deletecategory.execute({ category_id });
 
-    return response.json({ message: 'Successfully deleted video!' });
+    return response.json({ message: 'Successfully deleted category!' });
   }
 }

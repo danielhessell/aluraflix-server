@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "dev": "node dist/server.js",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules --respawn --exit-child src/infra/http/server.ts",
-    "test": "dotenv -e .env.test jest --runInBand --detectOpenHandles",
+    "test": "dotenv -e .env.test jest",
     "migrate:postgres": "dotenv -e .env.test -- npx prisma migrate dev --name postgres-init"
   },
   "devDependencies": {
