@@ -6,7 +6,7 @@ export interface IVideosRepository {
   create(data: ICreateVideoDTO): Promise<IVideoDTO>;
   findById(video_id: string): Promise<IVideoDTO>;
   findByTitleAndUser(user_id: string, title: string): Promise<IVideoDTO[]>;
-  findAllByUser(user_id: string): Promise<IVideoDTO[]>;
+  findAllByUser(user_id: string, page?: number): Promise<IVideoDTO[]>;
   update(data: IUpdateVideoDTO): Promise<IVideoDTO>;
   delete(video_id: string): Promise<void>;
 }

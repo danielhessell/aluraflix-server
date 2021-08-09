@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { prisma } from '@infra/prisma/client';
 import { ICreateVideoDTO } from '@modules/videos/dtos/ICreateVideoDTO';
 import { IUpdateVideoDTO } from '@modules/videos/dtos/IUpdateVideoDTO';
@@ -48,9 +49,16 @@ export class VideosRepository implements IVideosRepository {
     return videos;
   }
 
-  async findAllByUser(user_id: string): Promise<IVideoDTO[]> {
+  async findAllByUser(user_id: string, page: number): Promise<IVideoDTO[]> {
+    const pagingAlgorithm = page * 5;
+    console.log(pagingAlgorithm);
+    page = pagingAlgorithm - 5;
+    console.log(page);
+
     const videos = await this.repository.findMany({
       where: { user_id },
+      take: 5,
+      skip: page,
     });
 
     return videos;

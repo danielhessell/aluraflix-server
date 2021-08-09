@@ -45,7 +45,9 @@ export class CategoriesRepository implements ICategoriesRepository {
   }
 
   async listAll(): Promise<ICategoryDTO[]> {
-    const categories = await this.repository.findMany();
+    const categories = await this.repository.findMany({
+      take: 5,
+    });
 
     return categories;
   }
