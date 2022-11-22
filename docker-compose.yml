@@ -1,39 +1,19 @@
 version: "3"
 
 services:
-  db:
+  postgres:
     container_name: aluraflix-db
-    image: mysql:8
-    command: --innodb-use-native-aio=0
+    image: 'bitnami/postgresql'
     restart: always
     tty: true
     environment:
-      - MYSQL_DATABASE=koortimativa
-      - MYSQL_ROOT_PASSWORD=mysql
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=postgres
+      - POSTGRESQL_DATABASE=aluraflix
     networks:
       - aluraflix-network
-    volumes:
-      - ./.docker/mysql:/var/lib/mysql
     ports:
-      - "3306:3306"
-
-  app:
-    build: .
-    container_name: aluraflix-server
-    entrypoint: wait-for db:3306 -t 40 -- ./.docker/entrypoint.sh
-    networks:
-      - aluraflix-network
-    volumes:
-      - .:/usr/src/app
-    tty: true
-    ports:
-      - "5555:5555"
-      - "8080:8080"
-      - "3333:3333"
-    links:
-      - db
-    depends_on:
-      - db
+      - "5432:5432"
 
 networks:
   aluraflix-network:
