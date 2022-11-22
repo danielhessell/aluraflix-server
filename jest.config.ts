@@ -22,4 +22,5 @@ export default {
   preset: 'ts-jest',
   testMatch: ['**/*.spec.ts'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  verbose: true,
 };

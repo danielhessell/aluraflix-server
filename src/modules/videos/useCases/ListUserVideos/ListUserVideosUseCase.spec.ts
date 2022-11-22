@@ -66,6 +66,7 @@ describe('List User Videos Use Case', () => {
 
     const videos = await listUserVideosUseCase.execute({
       user_id: user.id,
+      page: 1,
     });
 
     expect(videos).toHaveLength(2);
@@ -95,6 +96,7 @@ describe('List User Videos Use Case', () => {
     const response = await listUserVideosUseCase.execute({
       user_id: user.id,
       title: 'DifferentTitle',
+      page: 1,
     });
 
     expect(response).toHaveLength(1);
@@ -111,6 +113,7 @@ describe('List User Videos Use Case', () => {
       listUserVideosUseCase.execute({
         user_id: user.id,
         title: 'Title nonexistent',
+        page: 1,
       }),
     ).rejects.toEqual(new AppError('No videos with this title were found.'));
   });
