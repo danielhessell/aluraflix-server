@@ -58,6 +58,14 @@ The project uses a database (Postgres), it is necessary to have it on your machi
 
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
+<details>
+<summary>How to run database with Docker Compose locally (linux)</summary>
+
+```bash
+docker-compose up -d
+```
+</details>
+
 Also, it’s good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/).
 
 ## :information_source: How to run
@@ -90,7 +98,10 @@ Install dependencies:
 npm install --legacy-peer-deps
 ```
 
-Run migrations
+> Remember to copy the .env.example file to an .env file, changing the information according to your environment.
+
+
+Run migrations:
 
 ```bash
 npx prisma generate && npx prisma migrate dev
