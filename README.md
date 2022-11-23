@@ -16,6 +16,7 @@ Edition #2 of Alura Challenges: Develop a Rest API from scratch, choosing langua
   - [Code standards](#balloon-code-standards)
 - [Getting started](#computer-getting-started)
 - [How to run](#information_source-how-to-run)
+  - [How to run test](#heavy_check_mark-how-to-run-tests)
 - [How to contribute to the project](#tada-how-to-contribute-to-the-project)
 - [License](#page_facing_up-license)
 <!--te-->
@@ -32,7 +33,7 @@ This project was developed with the following technologies:
 - [TSyringe](https://www.npmjs.com/package/tsyringe)
 - [Celebrate](https://www.npmjs.com/package/celebrate)
 
-#### :balloon: Code standards
+### :balloon: Code standards
 
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
@@ -114,6 +115,10 @@ npm run dev:server
 ```
 
 The server will start on port 3333. Go to http://localhost:3333.
+
+### :heavy_check_mark: How to run tests
+
+This project has unit and integration testing. Run ``npm test``.
 
 ## :tada: How to contribute to the project
 
